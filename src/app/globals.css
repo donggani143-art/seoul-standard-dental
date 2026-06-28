@@ -1,0 +1,247 @@
+@import url("https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css");
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────────────
+   Paperlogy 폰트 (9 weights, 로컬 파일)
+   1: Thin       100   /  6: SemiBold   600
+   2: ExtraLight 200   /  7: Bold       700
+   3: Light      300   /  8: ExtraBold  800
+   4: Regular    400   /  9: Black      900
+   5: Medium     500
+   ────────────────────────────────────────────────────────────────────── */
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-1Thin.ttf')       format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-2ExtraLight.ttf') format('truetype'); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-3Light.ttf')      format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-4Regular.ttf')    format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-5Medium.ttf')     format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-6SemiBold.ttf')   format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-7Bold.ttf')       format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-8ExtraBold.ttf')  format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Paperlogy'; src: url('/fonts/paperlogy/Paperlogy-9Black.ttf')      format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* ──────────────────────────────────────────────────────────────────────
+   그룹웨어 컬러 테마
+   - accent       : #e8533f (메인 빨강)
+   - accent-soft  : #fbeae6 (사이드바 헤더 등 연한 핑크)
+   - base         : #f5f3f0 (본문 배경 — 따뜻한 크림)
+   - offblack     : #2c2c2c (텍스트 다크 그레이)
+   - line         : #e6e3df (전반적인 보더)
+   ────────────────────────────────────────────────────────────────────── */
+@theme {
+  --color-accent: #e8533f;        /* 그룹웨어 빨강 (메인) */
+  --color-accent-hover: #cf432f;  /* 빨강 hover (진한) */
+  --color-accent-soft: #fbeae6;   /* 라이트 핑크 */
+  --color-base: #f5f3f0;          /* 페이지 배경 (크림) */
+  --color-offblack: #2c2c2c;      /* 다크 텍스트 */
+  --color-line: #e6e3df;          /* 보더 */
+  --color-line-strong: #d8d4cf;   /* 강조 보더 */
+  /* Paperlogy 우선, 폴백으로 Pretendard */
+  --font-sans: "Paperlogy", "Pretendard", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --shadow-diffusion: 0 20px 40px -15px rgba(0,0,0,0.05);
+  --color-zinc-50: #f7f5f2;
+  --color-zinc-100: #efebe5;
+  --color-zinc-200: #e6e3df;
+  --color-zinc-300: #d8d4cf;
+  --color-zinc-400: #b3ada5;
+  --color-zinc-500: #8c867d;
+  --color-zinc-600: #6b655d;
+  --color-zinc-700: #4d4843;
+  --color-zinc-800: #38342f;
+  --color-zinc-900: #2c2c2c;
+  --color-zinc-950: #1f1d1b;
+}
+
+/* zinc 팔레트 재정의: 어드민의 bg-zinc-*/text-zinc-*/border-zinc- 하드코딩이
+   많아, 팔레트만 그룹웨어 웜그레이/크림 톤으로 재정의해 전체를 컴포넌트 수정 없이 전환 */
+
+/* ──────────────────────────────────────────────────────────────────────
+   타이포그래피 위계 (Paperlogy weight 매핑)
+   - h1 (대제목)   : Black 900
+   - h2 (중제목)   : Bold 700
+   - h3 (소제목)   : SemiBold 600
+   - h4 (라벨)     : Medium 500
+   ────────────────────────────────────────────────────────────────────── */
+@layer base {
+  h1 { font-family: 'Paperlogy', sans-serif; font-weight: 900; letter-spacing: -0.03em; }
+  h2 { font-family: 'Paperlogy', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  h3 { font-family: 'Paperlogy', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+  h4 { font-family: 'Paperlogy', sans-serif; font-weight: 500; letter-spacing: -0.01em; }
+  p, span, label, button, input, textarea, select, td, th, a { font-family: inherit; }
+}
+
+@layer base {
+  :root {
+    --background: 36 12% 95%;
+    --foreground: 0 0% 17%;
+  }
+}
+
+body {
+  @apply bg-base text-offblack font-sans antialiased;
+}
+
+html {
+  font-family: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Glassmorphism Refraction Effect (SKILL.md Rule 4) */
+.liquid-glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] shadow-diffusion;
+}
+
+.liquid-glass-dark {
+  @apply bg-offblack/80 backdrop-blur-xl border border-white/10 shadow-[inner_0_1px_0_rgba(255,255,255,0.05)];
+}
+
+/* Image mask gradients */
+.image-fade-light {
+  mask-image: linear-gradient(to top, transparent 0%, black 30%);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 34s linear infinite;
+  white-space: nowrap;
+}
+
+body {
+  top: 0 !important;
+}
+
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+body > .skiptranslate {
+  display: none !important;
+}
+
+.goog-logo-link,
+.goog-te-gadget > span,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.board-html {
+  word-break: break-word;
+}
+
+.board-html > * + * {
+  margin-top: 1rem;
+}
+
+.board-html h2,
+.board-html h3,
+.board-html h4 {
+  color: #1e3a5f;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.board-html h2 {
+  font-size: 1.75rem;
+}
+
+.board-html h3 {
+  font-size: 1.35rem;
+}
+
+.board-html p,
+.board-html li,
+.board-html blockquote {
+  line-height: 1.9;
+}
+
+.board-html ul,
+.board-html ol {
+  margin-left: 1.4rem;
+  padding-left: 0.4rem;
+}
+
+.board-html ul {
+  list-style: disc;
+}
+
+.board-html ol {
+  list-style: decimal;
+}
+
+.board-html a {
+  color: #ee6a3d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.board-html img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(30, 58, 95, 0.08);
+  box-shadow: 0 18px 30px -24px rgba(30, 58, 95, 0.45);
+}
+
+.board-html blockquote {
+  border-left: 4px solid #ee6a3d;
+  background: rgba(238, 106, 61, 0.06);
+  padding: 1rem 1.25rem;
+  border-radius: 0.9rem;
+}
+
+/* ── TOAST UI Editor(게시판 본문 편집기) 테마 보정 ── */
+.board-toast-editor .toastui-editor-defaultUI {
+  border: 0;
+  border-radius: 0.5rem;
+  font-family: inherit;
+}
+.board-toast-editor .toastui-editor-toolbar {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+/* 활성 탭·버튼 강조색을 관리자 액센트로 통일 */
+.board-toast-editor .toastui-editor-defaultUI-toolbar button:hover {
+  border-color: var(--color-accent);
+}
+.board-toast-editor .toastui-editor-mode-switch .tab-item.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+.board-toast-editor .toastui-editor-ww-container,
+.board-toast-editor .toastui-editor-md-container {
+  background: #fff;
+}
+.board-toast-editor .ProseMirror {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-offblack);
+}

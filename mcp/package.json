@@ -1,0 +1,18 @@
+{
+  "name": "metalink-cms-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "METALINK CMS MCP 서버 — Claude 앱에서 플랫폼을 제어 (슈퍼어드민 / 업체어드민 권한)",
+  "bin": {
+    "metalink-cms-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "express": "^4.21.2",
+    "zod": "^3.23.8"
+  }
+}

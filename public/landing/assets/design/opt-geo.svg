@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="GEO 생성형 AI 검색 최적화 일러스트">
+  <defs>
+    <linearGradient id="geoBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#001E62"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <radialGradient id="geoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00B5E2" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#00B5E2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#geoBg)"/>
+  <circle cx="200" cy="200" r="180" fill="url(#geoGlow)"/>
+  <g opacity=".22" stroke="#fff" stroke-width="1">
+    <path d="M0 80 L400 80 M0 160 L400 160 M0 240 L400 240 M0 320 L400 320"/>
+    <path d="M80 0 L80 400 M160 0 L160 400 M240 0 L240 400 M320 0 L320 400"/>
+  </g>
+  <!-- AI core -->
+  <g transform="translate(200, 170)">
+    <circle r="60" fill="#fff" opacity=".08"/>
+    <circle r="44" fill="#fff" opacity=".15"/>
+    <circle r="30" fill="#1428A0" stroke="#00B5E2" stroke-width="2"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#fff" font-weight="900" letter-spacing="2">AI</text>
+  </g>
+  <!-- Connection lines + nodes -->
+  <g stroke="#00B5E2" stroke-width="1.6" fill="none" stroke-dasharray="3 4" opacity=".75">
+    <line x1="200" y1="170" x2="80" y2="80"/>
+    <line x1="200" y1="170" x2="320" y2="80"/>
+    <line x1="200" y1="170" x2="60" y2="220"/>
+    <line x1="200" y1="170" x2="340" y2="220"/>
+    <line x1="200" y1="170" x2="140" y2="290"/>
+    <line x1="200" y1="170" x2="260" y2="290"/>
+  </g>
+  <!-- Node bubbles -->
+  <g font-family="Arial, sans-serif" font-size="10" font-weight="700">
+    <g transform="translate(80, 80)">
+      <rect x="-32" y="-14" width="64" height="28" rx="14" fill="#fff"/>
+      <text x="0" y="4" text-anchor="middle" fill="#1428A0">ChatGPT</text>
+    </g>
+    <g transform="translate(320, 80)">
+      <rect x="-30" y="-14" width="60" height="28" rx="14" fill="#fff"/>
+      <text x="0" y="4" text-anchor="middle" fill="#1428A0">Gemini</text>
+    </g>
+    <g transform="translate(60, 220)">
+      <rect x="-34" y="-14" width="68" height="28" rx="14" fill="#00B5E2"/>
+      <text x="0" y="4" text-anchor="middle" fill="#fff">Perplexity</text>
+    </g>
+    <g transform="translate(340, 220)">
+      <rect x="-32" y="-14" width="64" height="28" rx="14" fill="#fff"/>
+      <text x="0" y="4" text-anchor="middle" fill="#1428A0">Copilot</text>
+    </g>
+    <g transform="translate(140, 290)">
+      <rect x="-30" y="-14" width="60" height="28" rx="14" fill="#fff"/>
+      <text x="0" y="4" text-anchor="middle" fill="#1428A0">Claude</text>
+    </g>
+    <g transform="translate(260, 290)">
+      <rect x="-30" y="-14" width="60" height="28" rx="14" fill="#fff"/>
+      <text x="0" y="4" text-anchor="middle" fill="#1428A0">Brave AI</text>
+    </g>
+  </g>
+  <!-- GEO badge -->
+  <g transform="translate(200, 348)">
+    <rect x="-50" y="-18" width="100" height="36" rx="18" fill="#00B5E2"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#fff" font-weight="800" letter-spacing="3">GEO</text>
+  </g>
+</svg>

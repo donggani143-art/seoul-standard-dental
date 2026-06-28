@@ -1,0 +1,79 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dev-server.log
+dev-*.log
+
+# deploy artifacts
+deploy-*.zip
+*.tar.gz
+/output
+
+# claude code session data
+.claude/
+
+# local data
+*.db
+*.db-journal
+
+# local upload staging (이미지·자료 준비 폴더 — 운영 업로드는 별도)
+.upload/
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Keep the SQLite content DB for preview deploys
+!wonjudental.db
+
+# Local scratch / accidental nested repo
+/tmp/
+/seoul-standard-dental/
+
+# Codex/generated local temporary files
+/tmp-*
+/tmp-page12-*
+/tmp-current-*
+/tmp-encyclopedia-*
+
+# Local database backups
+wonjudental.db.bak*
+wonjudental.db.db
+
+# Playwright/Codex local browser session files
+/.playwright-cli/
+/.playwright-cli*

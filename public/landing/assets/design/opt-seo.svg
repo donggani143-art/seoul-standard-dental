@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="SEO 검색엔진 최적화 일러스트">
+  <defs>
+    <linearGradient id="seoBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0A1B6B"/>
+      <stop offset="100%" stop-color="#1428A0"/>
+    </linearGradient>
+    <linearGradient id="seoCard" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E9EFFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#seoBg)"/>
+  <g opacity=".18" stroke="#fff" stroke-width="1">
+    <path d="M0 80 L400 80 M0 160 L400 160 M0 240 L400 240 M0 320 L400 320"/>
+    <path d="M80 0 L80 400 M160 0 L160 400 M240 0 L240 400 M320 0 L320 400"/>
+  </g>
+  <!-- Browser card -->
+  <rect x="60" y="80" width="280" height="200" rx="10" fill="url(#seoCard)"/>
+  <rect x="60" y="80" width="280" height="32" rx="10" fill="#1428A0"/>
+  <circle cx="76" cy="96" r="4" fill="#FFB4B4"/>
+  <circle cx="90" cy="96" r="4" fill="#FFE066"/>
+  <circle cx="104" cy="96" r="4" fill="#7CE0A0"/>
+  <rect x="130" y="88" width="190" height="16" rx="3" fill="#fff" opacity=".25"/>
+  <!-- search bar -->
+  <rect x="76" y="128" width="200" height="28" rx="14" fill="#F5F5F7"/>
+  <circle cx="92" cy="142" r="6" fill="none" stroke="#1428A0" stroke-width="2.4"/>
+  <line x1="97" y1="147" x2="104" y2="154" stroke="#1428A0" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="116" y="146" font-family="Arial, sans-serif" font-size="11" fill="#555" font-weight="600">홈페이지 제작 서울</text>
+  <rect x="280" y="128" width="44" height="28" rx="6" fill="#1428A0"/>
+  <text x="291" y="146" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="700">검색</text>
+  <!-- result rows -->
+  <rect x="76" y="172" width="160" height="6" rx="3" fill="#1428A0"/>
+  <rect x="76" y="184" width="220" height="4" rx="2" fill="#C8D2E8"/>
+  <rect x="76" y="194" width="180" height="4" rx="2" fill="#C8D2E8"/>
+  <rect x="76" y="218" width="140" height="6" rx="3" fill="#1428A0"/>
+  <rect x="76" y="230" width="220" height="4" rx="2" fill="#C8D2E8"/>
+  <rect x="76" y="240" width="160" height="4" rx="2" fill="#C8D2E8"/>
+  <!-- Tag pills -->
+  <g transform="translate(60, 312)">
+    <rect width="80" height="32" rx="16" fill="#00B5E2"/>
+    <text x="40" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#fff" font-weight="800" letter-spacing="2">SEO</text>
+  </g>
+  <g transform="translate(150, 312)" opacity=".55">
+    <rect width="60" height="32" rx="16" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="30" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="700">메타</text>
+  </g>
+  <g transform="translate(220, 312)" opacity=".55">
+    <rect width="64" height="32" rx="16" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="32" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="700">스키마</text>
+  </g>
+  <g transform="translate(294, 312)" opacity=".55">
+    <rect width="46" height="32" rx="16" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="23" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#fff" font-weight="700">ALT</text>
+  </g>
+  <!-- Floating dots -->
+  <circle cx="350" cy="60" r="6" fill="#00B5E2"/>
+  <circle cx="40" cy="350" r="4" fill="#fff" opacity=".7"/>
+</svg>
