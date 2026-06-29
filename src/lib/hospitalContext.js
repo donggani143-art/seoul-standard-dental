@@ -24,7 +24,15 @@ function normalizeHost(host) {
 
 export async function getHospitalFromHost(host) {
   const normalized = normalizeHost(host);
-  if (!normalized) return null;
+  if (!normalized) {
+    try {
+      await ensurePlatformSchema();
+      const db = await getDb();
+      return getDefaultPublicHospital(db);
+    } catch {
+      return null;
+    }
+  }
 
   const cached = domainCache.get(normalized);
   if (cached && Date.now() - cached.at < CACHE_TTL_MS) {

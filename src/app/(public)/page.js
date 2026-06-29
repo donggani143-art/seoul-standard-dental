@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import DynamicHtml from '@/components/DynamicHtml';
 import JsonLd from '@/components/JsonLd';
 import PageScript from '@/components/PageScript';
