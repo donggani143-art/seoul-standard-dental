@@ -4,6 +4,19 @@ import { ensurePlatformSchema } from '@/lib/platform';
 
 const domainCache = new Map();
 const CACHE_TTL_MS = 60_000;
+const DEFAULT_PUBLIC_HOSPITAL_SLUG = process.env.DEFAULT_PUBLIC_HOSPITAL_SLUG || 'seoul-standard';
+
+async function getDefaultPublicHospital(db) {
+  const row = await db.get(
+    `SELECT id AS hospital_id, name AS hospital_name
+     FROM hospitals
+     WHERE slug = ? AND status = 'active'
+     LIMIT 1`,
+    [DEFAULT_PUBLIC_HOSPITAL_SLUG]
+  );
+
+  return row ? { hospitalId: row.hospital_id, hospitalName: row.hospital_name } : null;
+}
 
 function normalizeHost(host) {
   return String(host || '').split(':')[0].trim().toLowerCase();
@@ -43,7 +56,7 @@ export async function getHospitalFromHost(host) {
 
     const result = row
       ? { hospitalId: row.hospital_id, hospitalName: row.hospital_name }
-      : null;
+      : await getDefaultPublicHospital(db);
 
     domainCache.set(normalized, { value: result, at: Date.now() });
     return result;
