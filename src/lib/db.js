@@ -1,8 +1,49 @@
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
+import { DatabaseSync } from 'node:sqlite';
 import path from 'path';
 
 let db = null;
+
+function normalizeParams(args) {
+  if (args.length === 1 && Array.isArray(args[0])) return args[0];
+  if (args.length === 1 && args[0] && typeof args[0] === 'object') return args[0];
+  return args;
+}
+
+function toPlainRow(row) {
+  if (!row) return row;
+  return Object.fromEntries(Object.entries(row));
+}
+
+function toPlainRows(rows) {
+  return rows.map(toPlainRow);
+}
+
+function createDbAdapter(filename) {
+  const connection = new DatabaseSync(filename);
+
+  return {
+    exec(sql) {
+      connection.exec(sql);
+    },
+    get(sql, ...args) {
+      const statement = connection.prepare(sql);
+      return toPlainRow(statement.get(...normalizeParams(args)));
+    },
+    all(sql, ...args) {
+      const statement = connection.prepare(sql);
+      return toPlainRows(statement.all(...normalizeParams(args)));
+    },
+    run(sql, ...args) {
+      const statement = connection.prepare(sql);
+      const result = statement.run(...normalizeParams(args));
+      const lastID = result.lastInsertRowid === undefined ? undefined : Number(result.lastInsertRowid);
+      return { changes: result.changes, lastID, id: lastID };
+    },
+    close() {
+      connection.close();
+    }
+  };
+}
 
 const seoDefaults = [
   {
@@ -337,10 +378,7 @@ async function getDb() {
 
   const dbPath = path.join(process.cwd(), 'wonjudental.db');
 
-  db = await open({
-    filename: dbPath,
-    driver: sqlite3.Database
-  });
+  db = createDbAdapter(dbPath);
 
   await db.exec(`
     CREATE TABLE IF NOT EXISTS popup_settings (
