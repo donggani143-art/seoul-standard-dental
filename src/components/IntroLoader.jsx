@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 const INTRO_TEXT = '당신 치아의 평생 주치의';
-const BRAND_TEXT = 'Wonju Dental Clinic';
+const BRAND_TEXT = 'Seoul Standard Dental Clinic';
 
 export default function IntroLoader() {
   const pathname = usePathname();
@@ -112,9 +112,9 @@ export default function IntroLoader() {
           ease: [0.22, 1, 0.36, 1],
         }}
       >
-        <span>Wonju</span>
-        <span className="text-accent"> Dental </span>
-        <span>Clinic</span>
+        <span>Seoul</span>
+        <span className="text-accent"> Standard </span>
+        <span>Dental Clinic</span>
       </motion.div>
     </motion.div>
   );
